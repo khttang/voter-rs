@@ -1,0 +1,15 @@
+[package]
+name = "voterd"
+description = "voter-core as a Linux daemon: three channels in over UDP, mode changes and latches out"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "voterd-rs"
+path = "src/main.rs"
+
+[dependencies]
+signal-hook = "0.4.5"
+voter-core = { path = "../voter-core" }

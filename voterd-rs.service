@@ -1,0 +1,9 @@
+[Unit]
+Description=Triple-redundant altimeter voter (Rust)
+
+[Service]
+ExecStart=/usr/bin/voterd-rs 5007 5 3
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

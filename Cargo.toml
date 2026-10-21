@@ -1,0 +1,15 @@
+[workspace]
+members = ["voter-core", "voterd"]
+resolver = "3"
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+license = "MIT"
+# Yocto 6.0 ships Rust 1.94.1: the resolver then picks crate versions that build with it
+rust-version = "1.94"
+
+[profile.release]
+# Smaller binary for the target image; a panic aborts instead of unwinding
+panic = "abort"
+lto = true
